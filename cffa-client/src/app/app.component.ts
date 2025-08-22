@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { LeagueTableComponent } from './components/league-table/league-table.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [LeagueTableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'cffa-client';
+  title = 'Ceylon Fantasy Football Association';
 }

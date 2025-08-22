@@ -1,11 +1,27 @@
 const express = require('express')
 const app = express()
 const PORT = 3000
+const {getFPLData, getLeagueStandings} = require('./fplData');
 
-app.get('/hello_world', (req, res) => {
-    res.send('HELLO WORLD!');
+app.get('/getFPLData', async (req, res) => {
+    try {
+        const data = await getFPLData();
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch FPL data' });
+    }
+})
+
+app.get('/getLeagueStandings/:leagueID', async (req, res) => {
+    try {
+        const leagueID = req.params.leagueID;
+        const data = await getLeagueStandings(leagueID);
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch FPL data' });
+    }
 })
 
 app.listen(PORT, () => {
-    console.log(`Application is running on port ${PORT}`);
+    console.log(`Application is running on port http://localhost:${PORT}`);
 })
