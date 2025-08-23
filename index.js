@@ -1,4 +1,4 @@
-import express from 'express';
+const express = require('express');
 const app = express()
 const PORT = 3000
 import { getFPLData, getLeagueStandings } from './fplData';
@@ -25,7 +25,7 @@ app.get('/getLeagueStandings/:leagueID', async (req, res) => {
 app.use(express.static(`${__dirname}/cffa-client/dist/cffa-client/browser`))
 
 app.listen(PORT, () => {
-    console.log(`Application is running on port http://localhost:${PORT}`);
+    console.log(`Application is running`);
 })
 
 export default app;
