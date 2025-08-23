@@ -3,7 +3,7 @@ import { LeagueTableComponent } from './components/league-table/league-table.com
 
 @Component({
   selector: 'app-root',
-  imports: [LeagueTableComponent],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
