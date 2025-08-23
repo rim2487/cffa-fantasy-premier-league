@@ -1,6 +1,6 @@
 const express = require('express');
-const app = express()
-const PORT = 3000
+const app = express();
+const PORT = 3000;
 import { getFPLData, getLeagueStandings } from './fplData';
 
 app.get('/getFPLData', async (req, res) => {
@@ -10,7 +10,7 @@ app.get('/getFPLData', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch FPL data' });
     }
-})
+});
 
 app.get('/getLeagueStandings/:leagueID', async (req, res) => {
     try {
@@ -20,12 +20,12 @@ app.get('/getLeagueStandings/:leagueID', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch FPL data' });
     }
-})
+});
 
-app.use(express.static(`${__dirname}/cffa-client/dist/cffa-client/browser`))
+app.use(express.static(`${__dirname}/cffa-client/dist/cffa-client/browser`));
 
 app.listen(PORT, () => {
     console.log(`Application is running`);
-})
+});
 
 export default app;
