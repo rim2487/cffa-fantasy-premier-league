@@ -171,3 +171,4 @@ out
 .svelte-kit
 
 node_modules
+.vercel

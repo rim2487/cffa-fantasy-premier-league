@@ -22,6 +22,10 @@ app.get('/getLeagueStandings/:leagueID', async (req, res) => {
     }
 })
 
+app.use(express.static(`${__dirname}/cffa-client/dist/cffa-client/browser`))
+
 app.listen(PORT, () => {
     console.log(`Application is running on port http://localhost:${PORT}`);
 })
+
+module.exports = app;
