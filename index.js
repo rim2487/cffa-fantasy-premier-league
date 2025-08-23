@@ -1,7 +1,7 @@
-const express = require('express')
+import express from 'express';
 const app = express()
 const PORT = 3000
-const {getFPLData, getLeagueStandings} = require('./fplData');
+import { getFPLData, getLeagueStandings } from './fplData';
 
 app.get('/getFPLData', async (req, res) => {
     try {
@@ -28,4 +28,4 @@ app.listen(PORT, () => {
     console.log(`Application is running on port http://localhost:${PORT}`);
 })
 
-module.exports = app;
+export default app;
